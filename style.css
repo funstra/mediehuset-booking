@@ -1,0 +1,47 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  --size-0: 0.5rem;
+  --size-1: 1rem;
+  --size-2: 2rem;
+  --size-3: 4rem;
+
+  --black: #333;
+  --dark: #777;
+  --light: #aaa;
+  --white: #eee;
+}
+html {
+  height: 100vh;
+}
+body {
+  height: 100%;
+  padding: var(--size-0);
+
+  color: var(--black);
+}
+
+main {
+  border-radius: var(--size-0);
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* Components */
+/* lister - - - */
+app-listing {
+  background-color: var(--light);
+  flex-grow: 1;
+}
+/* drawer - - -  */
+app-drawer {
+  /* background-color: var(--dark); */
+}
+
+app-drawer{
+}
