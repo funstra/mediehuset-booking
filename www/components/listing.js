@@ -1,6 +1,10 @@
 const template = document.createElement('template')
 template.innerHTML = String.raw`
     <style>
+        :host{
+            opacity: 0;
+            transition: opacity 125ms;
+        }
         img{
             width: 100%;
             display: block;
@@ -27,6 +31,12 @@ customElements.define('app-listing',
                 case 'context':
                     this.shadowRoot.querySelector('p span').textContent = newValue
                     this.shadowRoot.querySelector('img').src = newValue ? `./assets/${newValue}.svg` : ''
+                    if(newValue != ""){
+                        this.style.opacity = 1
+                    }else{
+                        this.style.opacity = 0
+
+                    }
             }
         }
     })

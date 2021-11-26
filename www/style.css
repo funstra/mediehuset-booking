@@ -13,6 +13,8 @@ html {
   --dark: #777;
   --light: #aaa;
   --white: #eee;
+
+  --main: rgb(32, 61, 224);
 }
 html {
   height: 100vh;
@@ -34,6 +36,7 @@ main {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
+  border: 2px var(--white) dashed;
 }
 
 /* Components */
@@ -45,6 +48,7 @@ app-listing {
 /* drawer - - -  */
 app-drawer {
   /* background-color: var(--dark); */
+  transition: height 75ms ease-out;
 }
 
 app-drawer {
