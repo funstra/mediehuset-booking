@@ -1,8 +1,21 @@
+const months = [
+    'Jan',
+    'Feb',
+    'Mars',
+    'Apr',
+    'May',
+    'Jun',
+    'Jul',
+    'Aug',
+    'Sep',
+    'Oct',
+    'Nov',
+    'Dec',
+]
 const curentDate = new Date()
 const yyymmdd = curentDate.toISOString().split('T')[0]
 const maxDate = new Date(curentDate.setDate(curentDate.getDate() + 60))
 const MAXyyymmdd = maxDate.toISOString().split('T')[0]
-console.log(curentDate == maxDate)
 const template = document.createElement('template')
 template.innerHTML = String.raw`
 <style>
@@ -40,20 +53,20 @@ template.innerHTML = String.raw`
     
 </style>
 <div class="date-picker">
-    <div>
+    <div oninput="__callHost(event,'handleDate')">
         <label for="start-date">
-            <span>d</span>
-            <span>m</span>
+            <span>${yyymmdd.split('-')[2]}</span>
+            <span>${months[+yyymmdd.split('-')[1]]}</span>
         </label>
         <input id="start-date" type="date" value="${yyymmdd}" min="${yyymmdd}" max="${MAXyyymmdd}">
     </div>
     <div>
     →
     </div>
-    <div>
+    <div oninput="__callHost(event,'handleDate')">
         <label for="end-date">
-            <span>d</span>
-            <span>m</span>
+        <span>${yyymmdd.split('-')[2]}</span>
+        <span>${months[+yyymmdd.split('-')[1]]}</span>
         </label>
         <input id="end-date" type="date" value="${yyymmdd}" min="${yyymmdd}" max="${MAXyyymmdd}">
     </div>
@@ -66,6 +79,14 @@ customElements.define('app-date',
             super()
             this.attachShadow({ mode: 'open' })
             this.shadowRoot.appendChild(template.content.cloneNode(true))
+        }
+        handleDate(event) {
+            const date = new Date(event.target.value)
+            const spans = event.target.parentElement.querySelectorAll('label span')
+            console.log(date.getDate())
+            console.log(months[date.getMonth()])
+            spans[0].textContent = date.getDate()
+            spans[1].textContent = months[date.getMonth()]
         }
         connectedCallback() { }
         diconnectedCallback() { }
