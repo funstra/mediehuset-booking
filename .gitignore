@@ -1,4 +1,5 @@
 .dstore
+ghPage.sh
 # Logs
 logs
 *.log
