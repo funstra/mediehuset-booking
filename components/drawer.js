@@ -55,6 +55,7 @@ customElements.define('app-drawer',
             this.shadowRoot.addEventListener('menu-context', e => {
                 if (window.appContext === 'CLOSED') {
                     this.setAttribute('open', 'true')
+                    console.log(e.detail.context)
                     window.appContext = e.detail.context
                 } else if (window.appContext === e.detail.context) {
                     this.setAttribute('open', 'false')
