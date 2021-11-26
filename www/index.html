@@ -13,9 +13,9 @@
     <link rel="preload" href="./components/listing.js" as="script">
     <link rel="preload" href="./components/menu.js" as="script">
 
-    <link rel="prefetch" href="./assets/user.svg">
-    <link rel="prefetch" href="./assets/filter.svg">
-    <link rel="prefetch" href="./assets/book.svg">
+    <link rel="preload" as="image" href="./assets/user.svg">
+    <link rel="preload" as="image" href="./assets/filter.svg">
+    <link rel="preload" as="image" href="./assets/book.svg">
 
     <link rel="stylesheet" href="./style.css">
     <script type="module" src="./app.js"></script>
@@ -25,7 +25,7 @@
 <body>
     <main>
         <app-listing context=""></app-listing>
-        <app-drawer open="false"></app-drawer>
+        <app-drawer open="true"></app-drawer>
     </main>
 </body>
 
