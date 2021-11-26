@@ -22,9 +22,11 @@ customElements.define('app-drawer',
             }
             .row-0{
                 display: flex;
+                justify-content: space-between;
             }
             .date{
-                flex-grow:  1;
+                display: flex;
+                align-items: center;
             }
 
             `
@@ -42,7 +44,6 @@ customElements.define('app-drawer',
 
         }
         height(h) {
-            // this.style.flexGrow = h
             this.style.height = h
         }
         set open(s) {
