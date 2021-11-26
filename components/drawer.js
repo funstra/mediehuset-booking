@@ -42,10 +42,11 @@ customElements.define('app-drawer',
 
         }
         height(h) {
-            this.style.flexGrow = h
+            // this.style.flexGrow = h
+            this.style.height = h
         }
         set open(s) {
-            this.height(s == 'true' ? '1' : '0')
+            this.height(s == 'true' ? '50%' : '10%')
         }
         get open() {
             return this.getAttribute('open')
